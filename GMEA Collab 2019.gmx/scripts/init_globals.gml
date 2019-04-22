@@ -23,6 +23,7 @@ global.levelmax = cs_levels;
 
 //Level time
 global.time = 0;
+global.timemax = 0;
 
 //Level skid
 global.skin = 0;

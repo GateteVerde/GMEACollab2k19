@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_10pts</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-6</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -152,6 +152,9 @@ if (y &lt; view_yview[0]+32)
 //Set the sprite
 sprite_index = spr_50sec;
 
+//Make visible
+visible = 1;
+
 //Add 50 seconds to time
 if (global.time &gt; 0)
     global.time += 50;
@@ -182,6 +185,9 @@ if (global.time &gt; 0)
 //Set the sprite
 sprite_index = spr_20sec;
 
+//Make visible
+visible = 1;
+
 //Add 50 seconds to time
 if (global.time &gt; 0)
     global.time += 20;
@@ -211,6 +217,9 @@ if (global.time &gt; 0)
 
 //Set the sprite
 sprite_index = spr_10sec;
+
+//Make visible
+visible = 1;
 
 //Add to time
 if (global.time &gt; 0)
@@ -247,6 +256,9 @@ x += 8;
 
 //Set the scale
 scale = 0;
+
+//Make visible
+visible = 1;
 
 //If there's not spare lifes
 if (obj_persistent.addlives == 0) {
@@ -299,6 +311,9 @@ x += 8;
 //Set the scale
 scale = 0;
 
+//Make visible
+visible = 1;
+
 //If there's not spare lifes
 if (obj_persistent.addlives == 0) {
 
@@ -349,6 +364,9 @@ x += 8;
 
 //Set the scale
 scale = 0;
+
+//Make visible
+visible = 1;
 
 //If there's not spare lifes
 if (obj_persistent.addlives == 0) {

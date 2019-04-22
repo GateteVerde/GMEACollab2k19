@@ -131,7 +131,8 @@ application_surface_draw_enable(0);
             <kind>1</kind>
             <string>///Make the screen shake when certain sounds are playing.
 
-if (audio_is_playing(snd_thwomp)) {
+if (audio_is_playing(snd_thwomp)) 
+|| (audio_is_playing(snd_explode2)) {
     
     //Repeat
     alarm[11] = 1;    
@@ -443,6 +444,7 @@ if (score &gt; 999999990)
     
 //Make the screen shake when the 'Thwomp' sound plays
 if (!audio_is_playing(snd_thwomp))
+&amp;&amp; (!audio_is_playing(snd_explode2))
     alarm[11] = 2;
 </string>
           </argument>

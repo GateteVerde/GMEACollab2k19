@@ -64,6 +64,7 @@
       <sound>sound\snd_door</sound>
       <sound>sound\snd_engine</sound>
       <sound>sound\snd_explode</sound>
+      <sound>sound\snd_explode2</sound>
       <sound>sound\snd_firework</sound>
       <sound>sound\snd_flagpole</sound>
       <sound>sound\snd_goal</sound>
@@ -1632,10 +1633,10 @@
             <sprite>sprites\spr_numbersgold</sprite>
             <sprite>sprites\spr_numbersblack</sprite>
           </sprites>
-          <sprite>sprites\spr_hud_mario</sprite>
-          <sprite>sprites\spr_hud_coin</sprite>
           <sprite>sprites\spr_hud_time</sprite>
-          <sprite>sprites\spr_hud_health</sprite>
+          <sprite>sprites\spr_hud_time_fuse</sprite>
+          <sprite>sprites\spr_hud_time_fusefire</sprite>
+          <sprite>sprites\spr_hud_time_explosion</sprite>
           <sprite>sprites\spr_hud_pmeter</sprite>
         </sprites>
         <sprites name="In-Map">
@@ -1667,7 +1668,6 @@
         <sprite>sprites\spr_timeup</sprite>
         <sprite>sprites\spr_mariostart</sprite>
         <sprite>sprites\spr_gameover</sprite>
-        <sprite>sprites\spr_hud_cards</sprite>
         <sprite>sprites\spr_hud_reserve</sprite>
         <sprite>sprites\spr_hud_starcoin</sprite>
         <sprite>sprites\spr_hud_starcoin_get</sprite>
@@ -2979,6 +2979,7 @@
           </objects>
           <object>objects\obj_foreground</object>
           <object>objects\obj_hud</object>
+          <object>objects\obj_hud_explosion</object>
           <object>objects\obj_timeup</object>
         </objects>
         <object>objects\obj_powkiller</object>
@@ -3007,12 +3008,10 @@
   <rooms name="rooms">
     <room>rooms\rm_disclaimer</room>
     <room>rooms\rm_anniversary</room>
+    <room>rooms\rm_template</room>
     <room>rooms\rm_titlemenu</room>
     <room>rooms\rm_intro</room>
     <room>rooms\rm_map</room>
-    <rooms name="Levels">
-      <room>rooms\rm_template</room>
-    </rooms>
     <rooms name="Special">
       <rooms name="Minigames">
         <room>rooms\rm_bonus</room>

@@ -392,6 +392,9 @@ if (switchon) {
 //Reset up the timer
 global.time = 0;
 
+//Create explosion
+instance_create(0, 0, obj_hud_explosion);
+
 //Kill the player
 with (instance_create(obj_playerparent.x,obj_playerparent.y,obj_player_dead)) timeup = 1;
 with (obj_playerparent) instance_destroy();
@@ -825,40 +828,6 @@ else if (instance_exists(follow)) {
 x = round(x);
 y = round(y);
 
-//Get a extra life if 100 coins are collected
-if (global.coins &gt; 99) {
-
-    //If lives are maxed out, keep them at 99.
-    if (lives &gt;= 99)
-        global.coins = 99;
-        
-    //Otherwise, give a extra life and reset the counter.
-    else {
-    
-        //Subtract 100 coins
-        global.coins -= 100;
-        
-        //If there's not spare lifes
-        if (obj_persistent.addlives == 0) {
-        
-            //Play '1up' sound
-            audio_play_sound(snd_1up, 0, false);
-        
-            //Add a life instantly
-            lives++;
-        }
-        else {
-        
-            //Add a spare life
-            with (obj_persistent) {
-            
-                addlives++;
-                alarm[2] = 30;
-            }
-        }
-    }
-}
-
 //Allow the player to either drop the reserve item or pause the game.
 if (barrier == 0) 
 &amp;&amp; (instance_exists(obj_playerparent)) 
@@ -1232,7 +1201,7 @@ else {
 if (global.reserve != cs_small) {
 
     //Create a reserve item
-    with (instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+12, obj_reserveitem)) {
+    with (instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+13, obj_reserveitem)) {
     
         sprite_index = constant_get_sprite(global.reserve);
     }
