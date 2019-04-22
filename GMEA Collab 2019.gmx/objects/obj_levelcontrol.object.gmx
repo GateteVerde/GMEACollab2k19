@@ -469,6 +469,15 @@ if (instance_exists(obj_playerparent)) {
         else if (global.time == 1)
             alarm[4] = 40;
     }
+    
+    //Play sound if timer is less than 10 seconds
+    if (global.time &lt; 11) {
+    
+        if (global.time % 2 == 0)
+            audio_play_sound(snd_tick, 0, false);
+        else
+            audio_play_sound(snd_tock, 0, false);
+    }
 }
 
 //Otherwise, hold.

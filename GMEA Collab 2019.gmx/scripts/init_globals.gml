@@ -91,6 +91,9 @@ global.checkpoint = noone;
 //Checkpoint Room
 global.checkpointroom = noone;
 
+//Level beaten
+global.levelbeat = false;
+
 //Fireworks
 global.fireworks = 0;
 

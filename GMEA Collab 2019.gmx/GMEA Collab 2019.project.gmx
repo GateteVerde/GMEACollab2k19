@@ -126,6 +126,8 @@
     </sounds>
     <sounds name="Misc">
       <sound>sound\snd_rain</sound>
+      <sound>sound\snd_tick</sound>
+      <sound>sound\snd_tock</sound>
     </sounds>
     <sounds name="Music">
       <sounds name="Events">

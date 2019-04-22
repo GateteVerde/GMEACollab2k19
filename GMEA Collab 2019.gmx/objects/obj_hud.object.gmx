@@ -131,10 +131,6 @@ if (global.healthmode == 0) {
     else
         draw_sprite_ext(spr_hud_reserve, 1, view_xview[0]+view_wview[0]/2, view_yview[0]+6, 1, 1, 0, c_white, 1);
 }
-else {
-
-    draw_sprite_ext(spr_hud_health, health, view_xview[0]+view_wview[0]/2, view_yview[0]+23, 1, 1, 0, c_white, 1);
-}
 
 //Star coins
 if (global.level != -1) {
@@ -159,7 +155,7 @@ draw_text(view_xview[0]+241, view_yview[0]+20, string_add_zeros(lives, 2));
 //P-Meter
 if (instance_exists(obj_playerparent)) {
 
-    draw_sprite_part_ext(spr_hud_pmeter, 0, 0, 0, 46/112*obj_playerparent.pmeter, 4, view_xview[0]+210, view_yview[0]+40, 1, 1, c_white, 1);
+    draw_sprite_part_ext(spr_hud_pmeter, flash, 0, 0, 46/112*obj_playerparent.pmeter, 4, view_xview[0]+210, view_yview[0]+40, 1, 1, c_white, 1);
 }
 
 //Time
