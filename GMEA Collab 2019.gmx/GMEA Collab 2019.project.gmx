@@ -3010,10 +3010,12 @@
   <rooms name="rooms">
     <room>rooms\rm_disclaimer</room>
     <room>rooms\rm_anniversary</room>
-    <room>rooms\rm_template</room>
     <room>rooms\rm_titlemenu</room>
     <room>rooms\rm_intro</room>
     <room>rooms\rm_map</room>
+    <rooms name="Levels">
+      <room>rooms\rm_template</room>
+    </rooms>
     <rooms name="Special">
       <rooms name="Minigames">
         <room>rooms\rm_bonus</room>

@@ -389,16 +389,20 @@ if (switchon) {
             <kind>1</kind>
             <string>///Kill the player
 
-//Reset up the timer
-global.time = 0;
+//If there's time already
+if (global.time == 1) {
 
-//Create explosion
-instance_create(0, 0, obj_hud_explosion);
-
-//Kill the player
-with (instance_create(obj_playerparent.x,obj_playerparent.y,obj_player_dead)) timeup = 1;
-with (obj_playerparent) instance_destroy();
-exit;
+    //Reset up the timer
+    global.time = 0;
+    
+    //Create explosion
+    instance_create(0, 0, obj_hud_explosion);
+    
+    //Kill the player
+    with (instance_create(obj_playerparent.x,obj_playerparent.y,obj_player_dead)) timeup = 1;
+    with (obj_playerparent) instance_destroy();
+    exit;
+}
 </string>
           </argument>
         </arguments>
