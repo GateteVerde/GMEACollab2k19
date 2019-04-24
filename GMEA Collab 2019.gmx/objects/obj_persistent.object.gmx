@@ -435,9 +435,9 @@ if (variable_global_exists("gamepad")) {
 if (lives &gt; 99) 
     lives = 99;
 
-//Make sure score don't go over 9999999990
-if (score &gt; 999999990) 
-    score = 999999990;
+//Make sure coins don't go over 9999
+if (global.coins &gt; 9999) 
+    global.coins = 9999;
     
 //Make the screen shake when the 'Thwomp' sound plays
 if (!audio_is_playing(snd_thwomp))

@@ -96,6 +96,7 @@ if (global.died == 1) {
 
 //Reset time
 global.time = 0;
+global.timemax = 0;
 
 //Reset berries
 global.berries = 0;

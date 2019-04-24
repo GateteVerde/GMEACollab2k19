@@ -1633,7 +1633,6 @@
           <sprites name="Digits">
             <sprite>sprites\spr_numbers</sprite>
             <sprite>sprites\spr_numbersgold</sprite>
-            <sprite>sprites\spr_numbersblack</sprite>
           </sprites>
           <sprite>sprites\spr_hud_time</sprite>
           <sprite>sprites\spr_hud_time_fuse</sprite>
@@ -1642,7 +1641,10 @@
           <sprite>sprites\spr_hud_pmeter</sprite>
         </sprites>
         <sprites name="In-Map">
-          <sprite>sprites\spr_mapborder</sprite>
+          <sprite>sprites\spr_mapx</sprite>
+          <sprite>sprites\spr_mapcoin</sprite>
+          <sprite>sprites\spr_mapworld</sprite>
+          <sprite>sprites\spr_mapworld_n</sprite>
           <sprite>sprites\spr_mapinventory</sprite>
           <sprite>sprites\spr_mapinventory_selector</sprite>
         </sprites>

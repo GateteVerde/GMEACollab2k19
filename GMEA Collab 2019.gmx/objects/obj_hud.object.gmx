@@ -150,10 +150,10 @@ if (global.level != -1) {
 draw_set_font(global.numbers_w);
 
 //Coins
-draw_text(view_xview[0]+133, view_yview[0]+15, string_add_zeros(global.coins, 4));
+draw_text(view_xview[0]+133, view_yview[0]+15, string_format(global.coins, 4, 0));
 
 //Lives
-draw_text(view_xview[0]+241, view_yview[0]+20, string_add_zeros(lives, 2));
+draw_text(view_xview[0]+241, view_yview[0]+20, string_format(lives, 2, 0));
 
 //P-Meter
 if (instance_exists(obj_playerparent)) {

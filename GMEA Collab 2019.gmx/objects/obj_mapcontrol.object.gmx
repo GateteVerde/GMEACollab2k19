@@ -457,8 +457,8 @@ else if (inventory) {
     
     //Show inventory
     inv_y += 4;
-    if (inv_y &gt; 40)
-        inv_y = 40;        
+    if (inv_y &gt; 38)
+        inv_y = 38;        
 }
 
 //Hide inventory if not showing
@@ -507,7 +507,7 @@ alarm[1] = 240;
 inventory = 0;
 
 //Create smoke
-with (instance_create(view_xview[0]+24,view_yview[0]+8,obj_smoke))
+with (instance_create(view_xview[0]+362,view_yview[0]+16,obj_smoke))
     depth = -11;
 </string>
           </argument>
@@ -584,55 +584,24 @@ if (global.mount == 2)
             <kind>1</kind>
             <string>///Draw HUD
 
-//Draw border
-draw_sprite_ext(spr_mapborder, 0, view_xview[0], view_yview[0], 1, 1, 0, c_white, 1);
+//Draw current world
+draw_sprite_ext(spr_mapworld, -1, view_xview[0]+6, view_yview[0]+6, 1, 1, 0, c_white, 1);
+draw_sprite_ext(spr_mapworld_n, global.world, view_xview[0]+105, view_yview[0]+6, 1, 1, 0, c_white, 1);
 
 //Set the font
 draw_set_font(global.font_interface);
-
-//Draw the player
-if ((showcase == 0) || (inventory == 1)) {
-
-    //Set the palette
-    pal_swap_set(spr_palette_mario, isflashing);
-    
-    //Draw the player
-    draw_sprite_ext(scr_mario_walk(), anim*2, view_xview[0]+32, view_yview[0]+16, 1, 1, 0, c_white, 1);
-    
-    //Reset the palette
-    pal_swap_reset();
-    
-    //Set the colour
-    draw_set_colour(c_white);
-    
-    //Draw lives
-    draw_text(view_xview[0]+40, view_yview[0]+24, "* " + string_format(lives,2,0));
-}
-
-//Draw the total amount of Star Coins
-else if (showcase == 1) {
-    
-    //Draw the player
-    draw_sprite_ext(spr_hud_starcoin_get, 0, view_xview[0]+24, view_yview[0]+16, 1, 1, 0, c_white, 1);
-    
-    //Set the colour
-    draw_set_colour(c_white);
-    
-    //Draw amount of coins collected
-    draw_text(view_xview[0]+40, view_yview[0]+24, "* " + string_format(global.starcoins,3,0) + "/" + string_format(global.levelmax*3,3,0));
-}
 
 //Draw levelname
 if (levelname != "") {
 
     //Draw the current levelname
-    draw_text(view_xview[0]+120, view_yview[0]+24, string(levelname));
+    draw_text_colour_shadowed(view_xview[0]+6, view_yview[0]+33, string(levelname), c_black, c_white, 0, 1, 0.5, 1);
     
     //Draw the coins collected in the level
     if (levelid != -1) {
     
         //Draw the coin spot
-        draw_sprite_ext(spr_hud_starcoin, 0, view_xview[0]+120, view_yview[0]+4, 1, 1, 0, c_white, 1);
+        draw_sprite_ext(spr_hud_starcoin, 0, view_xview[0]+6, view_yview[0]+46, 1, 1, 0, c_white, 1);
     
         //Draw the coins
         for (var i = 0; i &lt; 3; i++) {
@@ -642,32 +611,54 @@ if (levelname != "") {
                 if (ds_map_find_value(global.sc[i],levelid) &gt; 0) {
                 
                     if (ds_map_find_value(global.sc[i],levelid) == 2)
-                        draw_sprite_ext(spr_hud_starcoin_get, anim*1.5, view_xview[0]+120+(17*i), view_yview[0]+4, 1, 1, 0, c_white, 1);
+                        draw_sprite_ext(spr_hud_starcoin_get, anim*1.5, view_xview[0]+6+(16*i), view_yview[0]+46, 1, 1, 0, c_white, 1);
                     else
-                        draw_sprite_ext(spr_hud_starcoin_get, 0, view_xview[0]+120+(17*i), view_yview[0]+4, 1, 1, 0, c_white, 1);
+                        draw_sprite_ext(spr_hud_starcoin_get, 0, view_xview[0]+6+(16*i), view_yview[0]+46, 1, 1, 0, c_white, 1);
                 }
             }
         }
     }
 }
 
+//Set font
+draw_set_font(global.numbers_g);
+
+//Draw mario's shadow
+draw_sprite_ext(scr_mario_walk(), anim*2, view_xview[0]+370, view_yview[0]+24, -1, 1, 0, c_black, 0.5);
+
+//Set up palette
+pal_swap_set(spr_palette_mario, isflashing);
+
+//Draw mario again
+draw_sprite_ext(scr_mario_walk(), anim*2, view_xview[0]+370, view_yview[0]+23, -1, 1, 0, c_white, 1);
+
+//Reset palette
+pal_swap_reset();
+
+//Draw 'x' and lives
+draw_sprite_ext(spr_mapx, -1, view_xview[0]+351, view_yview[0]+28, 1, 1, 0, c_white, 1);
+draw_text(view_xview[0]+329, view_yview[0]+27, string_format(lives, 2, 0));
+
+//Draw coins
+draw_sprite_ext(spr_mapcoin, 0, view_xview[0]+6, view_yview[0]+194, 1, 1, 0, c_white, 1);
+draw_text(view_xview[0]+24, view_yview[0]+199, string_format(global.coins, 4, 0));
+
 //Draw the inventory if showing
 if (inv_y &gt; 0) {
-
-    //Draw inventory box
-    draw_sprite_ext(spr_mapinventory, 0, view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]-inv_y, 1, 1, 0, c_white, 1);
     
-    //Draw the items and the cursor
+    //Draw inventory box
+    draw_sprite_ext(spr_mapinventory, 0, view_xview[0]+104, view_yview[0]+view_hview[0]-inv_y, 1, 1, 0, c_white, 1);
+    
+    //Draw the items
     for (var i = 1; i &lt;= global.inventory[0]; i++) {
+
+        //Draw the items
+        draw_sprite_ext(constant_get_sprite(global.inventory[i]), 0, view_xview[0]+120+(i-1)*22, view_yview[0]+(224-inv_y), 1, 1, 0, c_white, 1);
         
-        //Draw items in inventory
-        draw_sprite_ext(constant_get_sprite(global.inventory[i]), 0, view_xview[0]+83+(i-1)*20, view_yview[0]+(224-inv_y), 1, 1, 0, c_white, 1);
-        
-        //Set the position of the box
+        //Draw the cursor
         if (boxselection == i)
-            draw_sprite_ext(spr_mapinventory_selector, anim, view_xview[0]+75+(i-1)*20, view_yview[0]+(224-inv_y), 1, 1, 0, c_white, 1);
-        
-    }
+            draw_sprite_ext(spr_mapinventory_selector, anim, view_xview[0]+112+(i-1)*22, view_yview[0]+(224-inv_y), 1, 1, 0, c_white, 1);         
+    }    
 }
 </string>
           </argument>
