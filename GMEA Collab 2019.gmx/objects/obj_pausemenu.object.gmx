@@ -26,34 +26,28 @@
           <argument>
             <kind>1</kind>
             <string>///The pause menu
+/*for (var i=0; i&lt;8; i++) {
+
+    temp_h[i] = background_hspeed[i];
+    temp_v[i] = background_vspeed[i];
+    background_hspeed[i] = 0;
+    background_vspeed[i] = 0;
+}*/
+
+cursormove = 0;
 
 //Play a sound and stop some sounds
 audio_play_sound(snd_pause,false,0);
 audio_stop_sound(snd_pmeter);
 audio_stop_sound(snd_skid);
 
-//Make sure the box doesn't animate
-image_speed = 0;
-image_index = 0;
-image_alpha = 0;
-image_xscale = 0;
-image_yscale = 0;
-
-//Shader variables
-uni_time = shader_get_uniform(shd_grayscale,"time");
-var_time_var = 0;
-
-uni_resolution = shader_get_uniform(shd_grayscale,"resolution");
-var_resolution_x = view_wview;
-var_resolution_y = view_hview;
-
-uni_greyscale_fade = shader_get_uniform(shd_grayscale,"fade");
-var_greyscale_fade = 0;
+//Yoshubs Menu stuff.
+usize = shader_get_uniform(shd_gaussian,"size");
+info = -1;
 
 //Create a screenshot
 back = background_create_from_surface(application_surface,0,0,room_width,room_height,0,0);
 
-//Stop movement on all backgrounds
 for (var i=0; i&lt;8; i++) {
 
     temp_h[i] = background_hspeed[i];
@@ -71,6 +65,10 @@ timeline_running = 0;
 //Deactivate the instances.
 alarm[1] = 2;
 
+move_ = -67;
+slidehoriz = -384;
+
+
 //Font
 font = global.font_message;
 
@@ -81,18 +79,38 @@ choice = 0;
 ready = 0;
 ready2 = 1;
 
+//Rotation
+poop = 0;
+rota = 1;
+rotat = 0;
+
 //Begin scaling
 alarm[0] = 2;
 
 //Handle the Menus
 menu[0] = "Continue";
 
+menu[1] = "Exit Level"
+
 if (global.levelbeat == 1)
-     menu[1] = "Return to map";
+     menucolor = c_white;
 else
-     menu[1] = "Cannot quit level";
+     menucolor = c_gray;
      
 menu[2] = "Quit Game";
+
+menu_rise[0] = 1;
+
+menu_rise[1] = 1;
+
+menu_rise[2] = 1;
+
+menu_rise[3] = 1;
+
+menu_rotate[0] = 0;
+menu_rotate[1] = 0;
+menu_rotate[2] = 0;
+menu_rotate[3] = 0;
 </string>
           </argument>
         </arguments>
@@ -145,7 +163,6 @@ instance_activate_object(obj_persistent);
           <argument>
             <kind>1</kind>
             <string>///Handle the scaling.
-
 if (ready2 == 1) {
 
     if (image_xscale &lt; 1) {
@@ -158,7 +175,6 @@ if (ready2 == 1) {
         image_alpha += 0.05;
         
         //Radius
-        var_greyscale_fade += 0.1;
         
         //Repeats the process
         alarm[0] = 1;
@@ -184,7 +200,6 @@ else if (ready2 == 2) {
         image_alpha -= 0.05;
         
         //Radies
-        var_greyscale_fade -= 0.1;
         
         //Repeats the process
         alarm[0] = 1;
@@ -221,6 +236,7 @@ else if (ready2 == 2) {
         instance_destroy();
     }
 }
+
 </string>
           </argument>
         </arguments>
@@ -244,13 +260,51 @@ else if (ready2 == 2) {
           <argument>
             <kind>1</kind>
             <string>///Handles keyboard presses.
+//Yeah I just stole it from MWE2
+rotat += poop;
+if (rota) {
+
+    if (poop &gt; 0.46875) {
+    
+        poop = 0.46875;
+        if (rotat &gt; 3)
+            rota = 0;
+    }
+    else
+        poop += 0.03125;
+}
+else {
+    
+    if (poop &lt; -0.46875) {
+        poop = -0.46875;
+        if (rotat &lt; -3)
+            rota = 1;
+    }
+    else
+        poop -= 0.03125;       
+}
+
+if (ready2 == 1) {
+	
+	move_ = lerp(move_, 0, 0.25);
+	info = lerp(info, 5, 0.25);
+	slidehoriz = lerp(slidehoriz, 0, 0.25);
+	
+} else if (ready2 == 2) {
+	
+	move_ = lerp(move_, -67, 0.25);
+	info = lerp(info, -1, 1);
+	slidehoriz = lerp(slidehoriz, 384, 0.25);
+}
 
 //Check if the 'Up Key' is pressed.
 if (keyboard_check_pressed(global.upkey)) {
 
     //If the choice is already the first, exit
     if (choice == 0)
-    exit;
+    {
+		choice = 3;
+	}
     
     //Otherwise, move up a choice
     choice -= 1;
@@ -263,8 +317,10 @@ if (keyboard_check_pressed(global.upkey)) {
 else if (keyboard_check_pressed(global.downkey)) {
 
     //If the choice is already the last, exit
-    if (choice == 2)
-    exit;
+    if (choice = 2)
+    {
+		choice = -1;
+	}
     
     //Otherwise, move down a choice
     choice += 1;
@@ -273,77 +329,84 @@ else if (keyboard_check_pressed(global.downkey)) {
     audio_play_sound(snd_move,false,0);
 }
 
-//Check if the 'Shift Key' is pressed.
-else if (keyboard_check_pressed(global.shiftkey)) {
-
-    //Has the action been completed?
-    if (ready == 1) {
-    
-        //Switch between the choices
-        switch (choice) {
-            
-            //If you chose the first choice.
-            case (0): {
-            
-                if (ready == 1) {
-                
-                    ready2 = 2;
-                    alarm[0] = 1;
-                }
-            } break;
-            
-            //If you chose the second choice.
-            case (1): {
-            
-                if (global.levelbeat == 1) {
-                
-                    //Activate all deactivated instances
-                    instance_activate_all();
-                    
-                    //Perform dead event
-                    global.died = true;
-                    
-                    //Stop Music
-                    audio_stop_all();
-                    
-                    //Play a sound
-                    audio_play_sound(snd_correct,false,0);
-                    
-                    //Return to the map
-                    endlevel();
-                    
-                    //Exit
-                    exit;
-                }
-                else {
-                
-                    audio_play_sound(snd_wrong,false,0)
-                    exit;
-                }
-            } break;
-            
-            //If you chose the last choice.
-            case (2): {
-            
-                audio_play_sound(snd_correct,false,0)
-                game_end();
-                exit;
-                
-            } break;
-        }
-    }
-}
-
 //Check if the 'Enter Key' is pressed without alt.
 else if (keyboard_check_pressed(global.enterkey)) &amp;&amp; (!keyboard_check(vk_alt)) {
 
     //Makes the menu ready to be closed.
     if (ready == 1)
         ready2 = 2;
-    
-    //Shrinks...
-    alarm[0] = 1;
 }
+
+if ready2 = 2
+&amp;&amp; (info &lt;= 0) {
+	
+	alarm[0] = 1;
+	
+}
+
+for(var i = 0; i &lt; 3; i+= 1) {
+	if choice = i {
+		
+		menu_rotate[i] = lerp(menu_rotate[i],rotat,0.25);
+		menu_rise[i] = lerp(menu_rise[i], 1.25, 0.25);
+		
+		if (keyboard_check_pressed(global.shiftkey)) {
+			switch(choice) {
+				
+				case(0): 
+				
+				//Makes the menu ready to be closed.
+				if (ready == 1)
+				    ready2 = 2;
+				
+				break;
+				case(1):
+				
+				if (global.levelbeat == 1) {
+                
+                    //Activate all deactivated instances
+                    instance_activate_all();
+                    
+                    //Perform dead event
+                global.died = true;
+                    
+                //Stop Music
+                audio_stop_all();
+                    
+                //Play a sound
+                audio_play_sound(snd_correct,false,0);
+                    
+                //Return to the map
+                endlevel();
+                    
+                //Exit
+                exit;
+                }
+                else {
+                
+                audio_play_sound(snd_wrong,false,0)
+                exit;
+                }
+				
+				break;
+				case(2):
+				
+    audio_play_sound(snd_correct,false,0)
+    game_end();
+    exit;
+				
+				break;
+			}
+		}
+		
+	} else {
+		
+		menu_rotate[i] = lerp(menu_rotate[i], 0, 0.25);
+		menu_rise[i] = lerp(menu_rise[i], 1, 0.25);
+	}
+}
+
+	cursormove = lerp(cursormove, (choice*32)+32, 0.25);
 </string>
           </argument>
         </arguments>
@@ -367,12 +430,9 @@ else if (keyboard_check_pressed(global.enterkey)) &amp;&amp; (!keyboard_check(vk
           <argument>
             <kind>1</kind>
             <string>///Draw the menu.
-
-//Set the shader
-shader_set(shd_grayscale);
-shader_set_uniform_f(uni_time, var_time_var);
-shader_set_uniform_f(uni_resolution, var_resolution_x, var_resolution_y);
-shader_set_uniform_f(uni_greyscale_fade, var_greyscale_fade);
+//view_xview[0]
+shader_set(shd_gaussian);
+shader_set_uniform_f(usize, view_wview[0], view_hview[0], info) //width,height,radius
 
 //Set the colour
 draw_set_colour(c_white);
@@ -393,40 +453,29 @@ if (background_exists(back)) {
 //Reset shader
 shader_reset();
 
-//Draw the actual border.
-draw_sprite_ext(spr_pausemenu, 1, view_xview[0]+global.gw/2, view_yview[0]+global.gh/2, image_xscale, image_yscale, 0, c_white, 1);
+draw_set_alpha(image_alpha);
 
-//Draw if the menu if fully scaled
-if (image_xscale == 1) {
+draw_sprite(spr_p_1,0,view_xview[0],view_yview[0]+216-move_);
 
-    //Align the text
-    draw_set_halign(fa_center)
-    draw_set_valign(fa_center)
-    
-    //Set the font
-    draw_set_font(font)
-    
-    //Set the alpha
-    draw_set_alpha(1)
-    
-    //Makes the word choice   
-    var i, text;
-    for (i = 0; i &lt; 3; i++;) {
-    
-        //Set the text to draw
-        text = string(menu[i]);
-        
-        //Draw depending of the option chosen
-        if (choice != i)
-            draw_text_colour_shadowed(view_xview[0]+global.gw/2, view_yview[0]+global.gh/2-12+(i)*12, string(text), make_color_rgb(1,117,203), make_color_rgb(151,216,255), 1, 1, 1, 1);
-        else
-            draw_text_colour_shadowed(view_xview[0]+global.gw/2, view_yview[0]+global.gh/2-12+(i)*12,"{ " + string(text) + " }", make_color_rgb(1,117,203), c_white, 1, 1, 1, 1);
-    }
-    
-    //Re-align the text
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
-}
+draw_sprite_ext(spr_p_1,0,view_xview[0]+384,view_yview[0]+move_,-1,-1,0,c_white,1);
+
+draw_set_halign(fa_center) 
+
+draw_set_font(global.font_interface)
+
+draw_text(view_xview[0]+(384/2),view_yview[0]+move_+(6),"-Altitude Acres-");
+
+draw_text_transformed(view_xview[0]+(384/2)+slidehoriz,view_yview[0]+(30)+32,menu[0],menu_rise[0],menu_rise[0],menu_rotate[0]);
+
+draw_text_transformed_color(view_xview[0]+(384/2)+slidehoriz,view_yview[0]+(30)+32+32,menu[1],menu_rise[1],menu_rise[1],menu_rotate[1],menucolor,menucolor,menucolor,menucolor,image_alpha);
+
+draw_text_transformed(view_xview[0]+(384/2)+slidehoriz,view_yview[0]+(30)+32+32+32,menu[2],menu_rise[2],menu_rise[2],menu_rotate[2]);
+
+draw_sprite(spr_cursor,-1,view_xview[0]+(384/3)+slidehoriz,view_yview[0]+(cursormove+30));
+
+draw_set_alpha(1);
+
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
