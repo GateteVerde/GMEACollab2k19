@@ -1775,6 +1775,7 @@
       <background>background\bgr_tileset_goal</background>
       <background>background\bgr_tileset_goal_smb3</background>
       <background>background\bgr_tileset_map</background>
+      <background>background\bgr_tileset_5</background>
     </backgrounds>
     <background>background\bgr_anniversary</background>
     <background>background\bgr_title</background>
@@ -3021,6 +3022,11 @@
     <room>rooms\rm_intro</room>
     <room>rooms\rm_map</room>
     <rooms name="Levels">
+      <rooms name="World 1">
+        <rooms name="1-5 Altitude Acres">
+          <room>rooms\rm_altacrs_a</room>
+        </rooms>
+      </rooms>
       <room>rooms\rm_template</room>
     </rooms>
     <rooms name="Special">
