@@ -2674,6 +2674,7 @@
           <object>objects\obj_player_eaten</object>
           <object>objects\obj_player_dead</object>
           <object>objects\obj_player_door</object>
+          <object>objects\obj_player_trail</object>
           <object>objects\obj_puller</object>
           <object>objects\obj_statue</object>
           <object>objects\obj_spinner</object>

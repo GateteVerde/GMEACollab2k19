@@ -364,12 +364,24 @@ else if (!collision_rectangle(x-1,bbox_bottom,x+1,bbox_bottom+1,obj_slopeparent,
 if (!keyboard_check(vk_down)) && (state < 2) {
 
     //If the player has the shell powerup
-    if (global.powerup == cs_shell)
+    if (global.powerup == cs_shell) {
+    
+        //Force end sliding
         sliding = false;
         
+        //Reset combo
+        hitcombo = 0;
+    }
+        
     //Otherwise, if the player does have the penguin suit and the horizontal speed is not at the max peak.
-    else if (global.powerup == cs_penguin) && (abs(xspeed) == xspeedmax)
+    else if (global.powerup == cs_penguin) && (abs(xspeed) == xspeedmax) {
+    
+        //Force end sliding
         sliding = false;
+        
+        //Reset combo
+        hitcombo = 0;
+    }
 }
 
 //Prevent the player from sliding too fast.
