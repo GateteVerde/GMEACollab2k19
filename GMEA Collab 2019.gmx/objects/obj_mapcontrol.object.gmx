@@ -39,6 +39,7 @@ anim = 0;
 
 //Level name
 levelname = "";
+levelnumb = "";
 
 //Level id
 levelid = -1;

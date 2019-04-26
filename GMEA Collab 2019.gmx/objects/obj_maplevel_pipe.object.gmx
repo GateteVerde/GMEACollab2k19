@@ -38,7 +38,8 @@
 */
 
 //Default variables
-levelname = "Warp Pipe"
+levelname = "Warp Pipe";
+levelnumb = "-PIPE";
 levelid = -1;
 pipetype = 0;
 exitdir = 10;
@@ -46,7 +47,7 @@ exitalt = 10;
 saveme = 0;
 pipex = 0;
 pipey = 0;
-myroom = room_next(room);
+myroom = rm_pipearea;
 block = 0;
 
 //Animate

@@ -149,6 +149,9 @@ if (global.level != -1) {
 //Set font
 draw_set_font(global.numbers_w);
 
+//Set colour
+draw_set_colour(c_white);
+
 //Coins
 draw_text(view_xview[0]+133, view_yview[0]+15, string_format(global.coins, 4, 0));
 

@@ -34,6 +34,7 @@
     background_vspeed[i] = 0;
 }*/
 
+//Cursor
 cursormove = 0;
 
 //Play a sound and stop some sounds
@@ -65,9 +66,9 @@ timeline_running = 0;
 //Deactivate the instances.
 alarm[1] = 2;
 
+//Movement
 move_ = -67;
 slidehoriz = -384;
-
 
 //Font
 font = global.font_message;
@@ -459,11 +460,11 @@ draw_sprite(spr_p_1,0,view_xview[0],view_yview[0]+216-move_);
 
 draw_sprite_ext(spr_p_1,0,view_xview[0]+384,view_yview[0]+move_,-1,-1,0,c_white,1);
 
-draw_set_halign(fa_center) 
+draw_set_halign(fa_center);
 
-draw_set_font(global.font_interface)
+draw_set_font(global.font_interface);
 
-draw_text(view_xview[0]+(384/2),view_yview[0]+move_+(6),"-Altitude Acres-");
+draw_text(view_xview[0]+(384/2),view_yview[0]+move_+(6),string(global.world) + string(global.levelnumb) + ": " + string(global.levelname));
 
 draw_text_transformed(view_xview[0]+(384/2)+slidehoriz,view_yview[0]+(30)+32,menu[0],menu_rise[0],menu_rise[0],menu_rotate[0]);
 

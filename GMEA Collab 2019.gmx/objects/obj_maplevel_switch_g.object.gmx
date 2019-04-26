@@ -42,6 +42,8 @@
 
 //Default variables
 levelname = "Green Switch Palace"
+levelnumb = "-GSP"
+levelauth = "Gatete";
 levelid = -1;
 exitdir = -1;
 exitalt = -1;

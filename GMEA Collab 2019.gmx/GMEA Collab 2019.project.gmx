@@ -1678,6 +1678,7 @@
         <sprites name="Menus">
           <sprite>sprites\spr_p_1</sprite>
         </sprites>
+        <sprite>sprites\spr_lvlstartbg</sprite>
       </sprites>
       <sprites name="Palettes">
         <sprites name="Players">
@@ -3000,7 +3001,7 @@
       <object>objects\obj_intro</object>
       <object>objects\obj_credits</object>
       <object>objects\obj_skipper</object>
-      <object>objects\obj_mariostart</object>
+      <object>objects\obj_levelstart</object>
       <object>objects\obj_gameover</object>
     </objects>
     <object>objects\obj_up</object>
@@ -3022,12 +3023,13 @@
     <room>rooms\rm_intro</room>
     <room>rooms\rm_map</room>
     <rooms name="Levels">
+      <room>rooms\rm_levelstart</room>
+      <room>rooms\rm_template</room>
       <rooms name="World 1">
         <rooms name="1-5 Altitude Acres">
           <room>rooms\rm_altacrs_a</room>
         </rooms>
       </rooms>
-      <room>rooms\rm_template</room>
     </rooms>
     <rooms name="Special">
       <rooms name="Minigames">

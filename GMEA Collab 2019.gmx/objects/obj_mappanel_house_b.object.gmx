@@ -42,6 +42,8 @@
 
 //Default variables
 levelname = "Lucky House"
+levelnumb = "-1UP"
+levelauth = "Gatete";
 levelid = -1;
 exitdir = -1;
 exitalt = -1;
@@ -102,6 +104,15 @@ if (ds_map_find_value(global.mapscreen,id) &gt; 0) {
 //Play 'Enter Stage' sound
 audio_play_sound(snd_enterstage, 0, false);
 
+//Set level name
+global.levelname = levelname;
+
+//Set area number
+global.levelnumb = levelnumb;
+
+//Set area author
+global.author = levelauth;
+
 //Do not remember checkpoint
 global.checkpoint = noone;    
 
@@ -116,6 +127,9 @@ with (obj_mapplayer) {
 
     myroom = rm_bonus2;
 }
+
+//Set destination room
+global.dest = myroom;
 </string>
           </argument>
         </arguments>

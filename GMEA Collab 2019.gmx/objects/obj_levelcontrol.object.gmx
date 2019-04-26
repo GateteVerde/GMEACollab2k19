@@ -1369,8 +1369,8 @@ if (global.mariostart == 0) {
         player_retrieve(global.checkpoint.x+8,global.checkpoint.y+32);
     }
 
-    //Create the Mario Start! effect
-    instance_create(view_xview[0],view_yview[0],obj_mariostart);
+    //Create the iris out effect
+    instance_create(view_xview[0], view_yview[0], obj_curtainin);
 }
 else {
 

@@ -52,6 +52,8 @@
 
 //Default variables
 levelname = "No name set!"
+levelnumb = "-F1";
+levelauth = "Gatete";
 levelid = -1;
 exitdir = 10;
 exitalt = 10;

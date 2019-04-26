@@ -236,13 +236,16 @@ if (image_alpha &gt; 0) {
 
 //Draw the inventory if showing
 if (inv_y &gt; 0) {
-
+    
     //Draw inventory box
-    draw_sprite_ext(spr_mapinventory, 0, view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]-inv_y, 1, 1, 0, c_white, 1);
-
+    draw_sprite_ext(spr_mapinventory, 0, view_xview[0]+104, view_yview[0]+view_hview[0]-inv_y, 1, 1, 0, c_white, 1);
+    
     //Draw the items
-    for (var i = 1; i &lt;= global.inventory[0]; i++) 
-        draw_sprite_ext(constant_get_sprite(global.inventory[i]), 0, view_xview[0]+83+(i-1)*20, view_yview[0]+(224-inv_y), 1, 1, 0, c_white, 1);
+    for (var i = 1; i &lt;= global.inventory[0]; i++) {
+
+        //Draw the items
+        draw_sprite_ext(constant_get_sprite(global.inventory[i]), 0, view_xview[0]+120+(i-1)*22, view_yview[0]+(224-inv_y), 1, 1, 0, c_white, 1);    
+    }    
 }
 </string>
           </argument>

@@ -66,6 +66,8 @@
 
 //Default variables
 levelname = "Mushroom House"
+levelnumb = "-BUP"
+levelauth = "Gatete";
 powerup[0] = -1;
 powerup[1] = -1;
 powerup[2] = -1;
@@ -185,6 +187,15 @@ if ((image_index == 0) &amp;&amp; (global.gameclear == 0)) {
 //Play 'Enter Stage' sound
 audio_play_sound(snd_enterstage, 0, false);
 
+//Set level name
+global.levelname = levelname;
+
+//Set area number
+global.levelnumb = levelnumb;
+
+//Set area author
+global.author = levelauth;
+
 //Set up pipe info
 global.prize[0] = powerup[0];
 global.prize[1] = powerup[1];
@@ -204,6 +215,9 @@ with (obj_mapplayer) {
 
     myroom = rm_bonus;
 }
+
+//Set destination room
+global.dest = myroom;
 </string>
           </argument>
         </arguments>

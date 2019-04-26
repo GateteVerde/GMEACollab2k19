@@ -42,6 +42,8 @@
 
 //Default variables
 levelname = "Blue Switch Palace"
+levelnumb = "-BSP"
+levelauth = "Gatete";
 levelid = -1;
 exitdir = -1;
 exitalt = -1;

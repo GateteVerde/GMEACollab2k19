@@ -31,6 +31,7 @@
 **  This item uses creation code!
 **
 **  levelname = Name of the level. (In quotes)
+**  levelnumb = Discrim of the level. (In quotes)
 **  levelid = ID for the level, this is used to handle star coins.
 **  exitdir = Regular exit direction
 **  exitalt = Secret exit direction      
@@ -45,6 +46,7 @@
 **      8: Up-Down
 **      9: Left-Right
 **
+**  numb = Level Discrim
 **  saveme = Whether to save the game after beating
 **  myroom = Destination room
 **  block = Number of Star Coins to unlock level. (Default: 0)
@@ -52,11 +54,13 @@
 
 //Default variables
 levelname = "No name set!"
-levelid = "1";
+levelnumb = "-1";
+levelauth = "Gatete";
+levelid = -1;
 exitdir = 10;
 exitalt = 10;
 saveme = 0;
-myroom = room_next(room);
+myroom = rm_template;
 block = 0;
 
 //Animate
@@ -230,9 +234,9 @@ if (other.speed == 0)
 
     //Level Name    
     if (block &gt; 0)
-        obj_mapcontrol.levelname = "????????";    
+        obj_mapcontrol.levelname = "???";    
     else
-        obj_mapcontrol.levelname = levelname;
+        obj_mapcontrol.levelname = string(levelname);
 }
 </string>
           </argument>
@@ -261,6 +265,15 @@ if (other.speed == 0)
 //Play 'Enter Stage' sound
 audio_play_sound(snd_enterstage, 0, false);
 
+//Set level name
+global.levelname = levelname;
+
+//Set area number
+global.levelnumb = levelnumb;
+
+//Set area author
+global.author = levelauth;
+
 //If no checkpoint was reached, set the default room
 if (checkpoint == noone) {
 
@@ -279,6 +292,9 @@ else {
     with (obj_mapplayer)
         myroom = global.checkpointroom;
 }
+
+//Set destination room
+global.dest = myroom;
 </string>
           </argument>
         </arguments>

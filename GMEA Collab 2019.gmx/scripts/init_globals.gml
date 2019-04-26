@@ -199,6 +199,12 @@ for (var i = 0; i < 3; i++) {
 //Star Coins collected
 global.starcoins = 0;
 
+//Level start variables
+global.levelname = "No name set!";
+global.levelnumb = "-1";
+global.author = "";
+global.dest = room_next(room);
+
 //Data structure for storing the state of the world map.
 global.mapscreen = ds_map_create();
 
