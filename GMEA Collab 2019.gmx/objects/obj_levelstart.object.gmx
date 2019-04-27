@@ -108,15 +108,27 @@ draw_set_font(global.font_interface);
 draw_set_valign(fa_center);
 draw_set_halign(fa_center);
 
-//Set colour
-draw_text_transformed_colour(view_xview[0] + view_wview[0] / 2, view_yview[0] + 40, "WORLD " + string(global.world) + string(global.levelnumb), 2, 2, 0, c_lime, c_lime, c_green, c_green, 1);
+//Draw WW-LL
+draw_text_transformed_colour(view_xview[0] + view_wview[0] / 2, view_yview[0] + 42, "WORLD " + string(global.world) + string(global.levelnumb), 2, 2, 0, c_black, c_black, c_black, c_black, 0.5);
+draw_text_transformed_colour(view_xview[0] + view_wview[0] / 2, view_yview[0] + 40, "WORLD " + string(global.world) + string(global.levelnumb), 2, 2, 0, $33FFB5, $33FFB5, $00FF13, $00FF13, 1);
+
+//Draw Level Name
+draw_set_colour(c_white);
+draw_text_transformed(view_xview[0] + view_wview[0] / 2, view_yview[0] + 77, string(global.levelname), 1, 2, 0);
+
+//Draw "By: "
+draw_text(view_xview[0] + view_wview[0] / 2, view_yview[0] + 97, "By");
+
+//Draw Author
+draw_set_colour($00E0FF);
+draw_text(view_xview[0] + view_wview[0] / 2, view_yview[0] + 105, string(global.author));
 
 //Reset text alignment
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
-//Reset alpha
-draw_set_alpha(1);
+//Reset text colour
+draw_set_colour(c_white);
 </string>
           </argument>
         </arguments>

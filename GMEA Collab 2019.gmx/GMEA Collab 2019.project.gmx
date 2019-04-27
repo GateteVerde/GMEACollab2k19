@@ -1781,6 +1781,7 @@
     <background>background\bgr_anniversary</background>
     <background>background\bgr_title</background>
     <background>background\bgr_pit</background>
+    <background>background\bgr_mappit</background>
     <background>background\bgr_titlebg_back</background>
   </backgrounds>
   <paths name="paths">
@@ -3026,7 +3027,7 @@
       <room>rooms\rm_levelstart</room>
       <room>rooms\rm_template</room>
       <rooms name="World 1">
-        <rooms name="1-5 Altitude Acres">
+        <rooms name="World 1-5 (Altitude Acres)">
           <room>rooms\rm_altacrs_a</room>
         </rooms>
       </rooms>
