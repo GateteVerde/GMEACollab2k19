@@ -1317,10 +1317,6 @@
           <sprite>sprites\spr_starman</sprite>
           <sprite>sprites\spr_pwing</sprite>
           <sprite>sprites\spr_1up</sprite>
-          <sprite>sprites\spr_1up_h1</sprite>
-          <sprite>sprites\spr_1up_h2</sprite>
-          <sprite>sprites\spr_1up_h3</sprite>
-          <sprite>sprites\spr_1up_h4</sprite>
           <sprite>sprites\spr_poison</sprite>
           <sprite>sprites\spr_goldshroom</sprite>
         </sprites>
@@ -1414,6 +1410,13 @@
           <sprite>sprites\spr_movingsaw_down</sprite>
           <sprite>sprites\spr_movingpipe</sprite>
           <sprite>sprites\spr_skullraft</sprite>
+        </sprites>
+        <sprites name="YI">
+          <sprite>sprites\spr_balloon</sprite>
+          <sprite>sprites\spr_blockplatform_h</sprite>
+          <sprite>sprites\spr_blockplatform_platform_h</sprite>
+          <sprite>sprites\spr_blockplatform_v</sprite>
+          <sprite>sprites\spr_blockplatform_platform_v</sprite>
         </sprites>
         <sprite>sprites\spr_rope</sprite>
         <sprite>sprites\spr_conveyor</sprite>
@@ -1554,6 +1557,13 @@
         <sprite>sprites\spr_marker_warppipe_down</sprite>
         <sprite>sprites\spr_marker_warppipe_left</sprite>
         <sprite>sprites\spr_marker_warppipe_right</sprite>
+      </sprites>
+      <sprites name="Item Markers">
+        <sprite>sprites\spr_marker_1up1</sprite>
+        <sprite>sprites\spr_marker_1up2</sprite>
+        <sprite>sprites\spr_marker_1up3</sprite>
+        <sprite>sprites\spr_marker_1up4</sprite>
+        <sprite>sprites\spr_marker_balloon</sprite>
       </sprites>
       <sprite>sprites\spr_up</sprite>
       <sprite>sprites\spr_down</sprite>
@@ -2516,6 +2526,11 @@
           <object>objects\obj_movingpipe</object>
           <object>objects\obj_skullraft</object>
         </objects>
+        <objects name="YI">
+          <object>objects\obj_generator_balloon</object>
+          <object>objects\obj_blockplatform_h</object>
+          <object>objects\obj_blockplatform_v</object>
+        </objects>
         <object>objects\obj_conveyor_l</object>
         <object>objects\obj_conveyor_r</object>
         <object>objects\obj_yoshiplatform</object>
@@ -2890,6 +2905,11 @@
               <object>objects\obj_weightplatform_right</object>
               <object>objects\obj_rope</object>
               <object>objects\obj_saw</object>
+            </objects>
+            <objects name="YI">
+              <object>objects\obj_balloon</object>
+              <object>objects\obj_blockplatform_platform_h</object>
+              <object>objects\obj_blockplatform_platform_v</object>
             </objects>
             <object>objects\obj_pulleyplatform_right</object>
             <object>objects\obj_pulleyplatform_rope</object>
