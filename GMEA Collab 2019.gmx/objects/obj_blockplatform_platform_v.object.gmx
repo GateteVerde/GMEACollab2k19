@@ -34,7 +34,7 @@ repeat (8) {
     with (instance_create(x, y, obj_smoke)) {
         
         //Motion
-        motion_set(a,0.5);
+        motion_set(a,0.75);
     }
     a += 45;
 }
@@ -118,9 +118,9 @@ else if (vspeed &gt; 0.5)
     vspeed = 0.5;
 
 //Set movement
-if (y &gt; ystart+32)
+if (y &gt; ystart)
     ready = -1;
-else if (y &lt; ystart-32)
+else if (y &lt; ystart-80)
     ready = 1;
 </string>
           </argument>

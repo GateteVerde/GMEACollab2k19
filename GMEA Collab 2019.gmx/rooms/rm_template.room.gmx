@@ -57,12 +57,17 @@
     <instance objName="obj_semisolid" x="560" y="384" name="inst_397ECBA1" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_semisolid" x="208" y="400" name="inst_E3778C2D" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelcontrol" x="0" y="0" name="inst_3B1EA353" locked="0" code="levelmusic = bgm_athletic;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_generator_balloon" x="16" y="0" name="inst_46915BD1" locked="0" code="xmin = 208;&#xA;xmax = 528;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="96" y="368" name="inst_DD0DE48D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blockplatform_h" x="64" y="320" name="inst_88A2B951" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blockplatform_v" x="160" y="320" name="inst_EF45EAC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blockplatform_v" x="576" y="320" name="inst_C5339322" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blockplatform_h" x="688" y="320" name="inst_7AA037E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spikedplatform_g" x="272" y="336" name="inst_D603FEBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spikedplatform_g" x="480" y="336" name="inst_006EC139" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spikedplatform_r" x="416" y="288" name="inst_2E6BD596" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spikedplatform_r" x="336" y="288" name="inst_855A459C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platformblock_g" x="336" y="336" name="inst_FD9290A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platformblock_r" x="400" y="336" name="inst_04CE3395" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgr_tileset" x="176" y="384" w="16" h="16" xo="16" yo="0" id="10097465" name="inst_EB802EE7" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

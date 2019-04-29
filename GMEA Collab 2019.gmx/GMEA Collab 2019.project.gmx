@@ -702,6 +702,8 @@
       <sprite>sprites\spr_arrowblock_reset</sprite>
       <sprite>sprites\spr_guessblock</sprite>
       <sprite>sprites\spr_discoblock</sprite>
+      <sprite>sprites\spr_platformblock_g</sprite>
+      <sprite>sprites\spr_platformblock_r</sprite>
       <sprite>sprites\spr_beanstalk</sprite>
     </sprites>
     <sprites name="Masks">
@@ -761,6 +763,7 @@
       <sprite>sprites\spr_slopemask_l</sprite>
       <sprite>sprites\spr_slopemask_r</sprite>
       <sprite>sprites\spr_spinmask</sprite>
+      <sprite>sprites\spr_spinmask_sp</sprite>
       <sprite>sprites\spr_starmask</sprite>
       <sprite>sprites\spr_starmask_big</sprite>
       <sprite>sprites\spr_stompmask</sprite>
@@ -1417,6 +1420,8 @@
           <sprite>sprites\spr_blockplatform_platform_h</sprite>
           <sprite>sprites\spr_blockplatform_v</sprite>
           <sprite>sprites\spr_blockplatform_platform_v</sprite>
+          <sprite>sprites\spr_spikedplatform_g</sprite>
+          <sprite>sprites\spr_spikedplatform_r</sprite>
         </sprites>
         <sprite>sprites\spr_rope</sprite>
         <sprite>sprites\spr_conveyor</sprite>
@@ -2048,6 +2053,8 @@
       <object>objects\obj_arrowblock_left</object>
       <object>objects\obj_arrowblock_right</object>
       <object>objects\obj_arrowblock_reset</object>
+      <object>objects\obj_platformblock_g</object>
+      <object>objects\obj_platformblock_r</object>
       <object>objects\obj_discoblock</object>
     </objects>
     <objects name="Enemies">
@@ -2530,6 +2537,8 @@
           <object>objects\obj_generator_balloon</object>
           <object>objects\obj_blockplatform_h</object>
           <object>objects\obj_blockplatform_v</object>
+          <object>objects\obj_spikedplatform_g</object>
+          <object>objects\obj_spikedplatform_r</object>
         </objects>
         <object>objects\obj_conveyor_l</object>
         <object>objects\obj_conveyor_r</object>

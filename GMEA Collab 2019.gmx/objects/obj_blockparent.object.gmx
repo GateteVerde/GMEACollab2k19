@@ -145,17 +145,21 @@ if (held)
 &amp;&amp; (held.vspeed &lt; 0)
 &amp;&amp; (held.bbox_top &gt; bbox_bottom+held.vspeed) {
 
-    //Bump it
-    ready = 1;
+    //If the block can be bumped
+    if (ready == 0) {
     
-    //Set the vertical speed
-    vspeed = -2;
-    
-    //Move down
-    alarm[0] = 4;
-    
-    //Perform block specific event
-    event_user(0);
+        //Bump it
+        ready = 1;
+        
+        //Set the vertical speed
+        vspeed = -2;
+        
+        //Move down
+        alarm[0] = 4;
+        
+        //Perform block specific event
+        event_user(0);
+    }
 }
 
 //Set depth
