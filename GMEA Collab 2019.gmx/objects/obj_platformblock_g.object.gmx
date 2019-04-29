@@ -76,7 +76,7 @@ with (obj_spikedplatform_g) {
     tangle = !tangle;
     
     //Stop spinning
-    alarm[0] = 60;
+    alarm[0] = 40;
 }
 
 //Allow this block to be used again

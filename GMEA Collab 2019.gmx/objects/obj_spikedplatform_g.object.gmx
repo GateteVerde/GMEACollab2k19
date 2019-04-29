@@ -136,9 +136,9 @@ else {
     
     //Set the angle
     if (tangle == 0)
-        image_angle -= 40;
+        image_angle -= 30;
     else
-        image_angle += 40;
+        image_angle += 30;
 }
 </string>
           </argument>
