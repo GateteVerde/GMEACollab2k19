@@ -1578,6 +1578,7 @@
       <sprite>sprites\spr_marker_event</sprite>
       <sprite>sprites\spr_marker_event2</sprite>
       <sprite>sprites\spr_marker_npctalk</sprite>
+      <sprite>sprites\spr_marker_hiddenwarp</sprite>
     </sprites>
     <sprites name="Special">
       <sprites name="Eyecandy">
@@ -2610,6 +2611,7 @@
       </objects>
       <objects name="Pipes">
         <object>objects\obj_warptop</object>
+        <object>objects\obj_warptop_hidden</object>
         <object>objects\obj_warpbottom</object>
         <object>objects\obj_warpleft</object>
         <object>objects\obj_warpright</object>
@@ -3055,6 +3057,12 @@
     <rooms name="Levels">
       <room>rooms\rm_levelstart</room>
       <room>rooms\rm_template</room>
+      <rooms name="World 0">
+        <rooms name="World 0-1 (Gatete's Tests)">
+          <room>rooms\rm_w0_l1_a</room>
+          <room>rooms\rm_w0_l1_b</room>
+        </rooms>
+      </rooms>
       <rooms name="World 1">
         <rooms name="World 1-5 (Altitude Acres)">
           <room>rooms\rm_altacrs_a</room>
