@@ -33,6 +33,9 @@ alarm[0] = 7;
 
 //Fuse fire anim
 anim = 0;
+
+//Show / Hide P-Meter and bomb
+hide = 0;
 </string>
           </argument>
         </arguments>
@@ -158,30 +161,35 @@ draw_text(view_xview[0]+133, view_yview[0]+15, string_format(global.coins, 4, 0)
 //Lives
 draw_text(view_xview[0]+241, view_yview[0]+20, string_format(lives, 2, 0));
 
-//P-Meter
-if (instance_exists(obj_playerparent)) {
+//If the inventory is showing
+if (hide == 0) {
 
-    draw_sprite_part_ext(spr_hud_pmeter, flash, 0, 0, 46/112*obj_playerparent.pmeter, 4, view_xview[0]+210, view_yview[0]+40, 1, 1, c_white, 1);
-}
-
-//Time
-if (global.time &gt; 0) {
-
-    //Draw the bomb
-    draw_sprite_ext(spr_hud_time, 0, view_xview[0], view_yview[0]+203, 1, 1, 0, c_white, 1);
+    //P-Meter
+    draw_sprite_ext(spr_hud_pmeter, -1, view_xview[0]+313, view_yview[0]+194, 1, 1, 0, c_white, 1);
     
-    //Draw the fuse
-    draw_sprite_part_ext(spr_hud_time_fuse, 0, 0, 0, 364/global.timemax*global.time, 5, view_xview[0]+14, view_yview[0]+208, 1, 1, c_white, 1);
-    draw_sprite_ext(spr_hud_time_fusefire, anim, view_xview[0]+14+(364/global.timemax*global.time), view_yview[0]+208, 1, 1, 0, c_white, 1);
+    //P-Meter Bar
+    if (instance_exists(obj_playerparent))
+        draw_sprite_part_ext(spr_hud_pmeter_bar, flash, 0, 0, 46/112*obj_playerparent.pmeter, 4, view_xview[0]+316, view_yview[0]+203, 1, 1, c_white, 1);
     
-    //Draw time if there's 100 seconds left
-    if (global.time &lt; 101) {
+    //Time
+    if (global.time &gt; 0) {
     
-        //Set the font
-        draw_set_font(global.numbers_g);
-    
-        //Draw the text
-        draw_text_colour(view_xview[0]+16, view_yview[0]+195, global.time, c_red, c_red, c_red, c_red, 1);
+        //Draw the bomb
+        draw_sprite_ext(spr_hud_time, 0, view_xview[0], view_yview[0]+198, 1, 1, 0, c_white, 1);
+        
+        //Draw the fuse
+        draw_sprite_part_ext(spr_hud_time_fuse, 0, 0, 0, 292/global.timemax*global.time, 5, view_xview[0]+14, view_yview[0]+203, 1, 1, c_white, 1);
+        draw_sprite_ext(spr_hud_time_fusefire, anim, view_xview[0]+14+(292/global.timemax*global.time), view_yview[0]+204, 1, 1, 0, c_white, 1);
+        
+        //Draw time if there's 100 seconds left
+        if (global.time &lt; 101) {
+        
+            //Set the font
+            draw_set_font(global.numbers_g);
+        
+            //Draw the text
+            draw_text_colour(view_xview[0]+16, view_yview[0]+188, global.time, c_red, c_red, c_red, c_red, 1);
+        }
     }
 }
     

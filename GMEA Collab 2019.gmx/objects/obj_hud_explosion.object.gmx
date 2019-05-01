@@ -184,8 +184,8 @@ image_index = 1;
             <kind>1</kind>
             <string>///Draw explosion
 
-draw_sprite_ext(sprite_index, -1, view_xview[0]+14, view_yview[0]+189, scale, scale, 0, c_white, 1);
-draw_sprite_ext(sprite_index, 0, view_xview[0]+14+bomx, view_yview[0]+189+bomy, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sprite_index, -1, view_xview[0]-1, view_yview[0]+197, scale, scale, 0, c_white, 1);
+draw_sprite_ext(sprite_index, 0, view_xview[0]-1+bomx, view_yview[0]+197+bomy, 1, 1, 0, c_white, 1);
 </string>
           </argument>
         </arguments>

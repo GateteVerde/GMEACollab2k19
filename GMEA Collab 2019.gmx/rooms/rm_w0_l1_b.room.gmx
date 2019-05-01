@@ -60,10 +60,10 @@
     <instance objName="obj_solid" x="32" y="32" name="inst_F32C2D89" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="208" y="16" name="inst_FE8B2047" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="336" y="32" name="inst_AB2D61F5" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
-    <instance objName="obj_messageblock" x="80" y="112" name="inst_6A85ABCD" locked="0" code="varmsg = &quot;Top Secret - Tell no one.#Jump directly to the top right corner!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_messageblock" x="80" y="112" name="inst_6A85ABCD" locked="0" code="varmsg = &quot;Top Secret - Tell no one.##Jump directly to the top right corner!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_trampoline" x="136" y="160" name="inst_91D64297" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warproom" x="192" y="64" name="inst_98781D81" locked="0" code="postchange = 1;&#xA;postx = 352;    &#xA;posty = 176;&#xA;myroom = rm_w0_l1_a;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol" x="0" y="-16" name="inst_548B3793" locked="0" code="levelmusic = bgm_athletic;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="-16" name="inst_548B3793" locked="0" code="levelmusic = bgm_athletic;&#xA;leveltime = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_warpbottom" x="176" y="112" name="inst_53336070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

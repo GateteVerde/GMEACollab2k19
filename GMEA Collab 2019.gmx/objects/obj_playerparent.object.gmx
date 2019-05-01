@@ -531,14 +531,8 @@ else {
         flyfix = 1;
 }
 
-//Force end somersault if starman ends
-if (somersault == 1)
-&amp;&amp; (!instance_exists(obj_invincibility)) {
-
-    somersault = false;
-    if (angle != 0)
-        angle = 0;
-}
+//Disable somersault
+somersault = 0;
 
 //If the gravity is enabled
 if (enable_gravity == 1) {

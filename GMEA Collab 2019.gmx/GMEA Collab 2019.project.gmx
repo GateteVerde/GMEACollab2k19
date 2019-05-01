@@ -1661,6 +1661,7 @@
           <sprite>sprites\spr_hud_time_fusefire</sprite>
           <sprite>sprites\spr_hud_time_explosion</sprite>
           <sprite>sprites\spr_hud_pmeter</sprite>
+          <sprite>sprites\spr_hud_pmeter_bar</sprite>
         </sprites>
         <sprites name="In-Map">
           <sprite>sprites\spr_mapx</sprite>

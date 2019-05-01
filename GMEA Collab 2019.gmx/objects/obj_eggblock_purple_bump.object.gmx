@@ -122,7 +122,7 @@ if (ready == 0) {
             
             //Create semisolid
             mytop = instance_create(x-8, y-16, obj_semisolid);
-            with (mytop)            
+            with (mytop) 
                 image_xscale = 2;
         }
     }

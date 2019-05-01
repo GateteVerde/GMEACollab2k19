@@ -138,6 +138,9 @@ else {
     //Play 'Inventory' sound
     audio_play_sound(snd_inventory, 0, false);
     
+    //Hide various HUD parameters
+    with (obj_hud) hide = 1;
+    
     //Show it
     inventory = 1;
 
