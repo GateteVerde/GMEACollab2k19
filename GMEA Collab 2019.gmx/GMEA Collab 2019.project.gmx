@@ -63,6 +63,7 @@
       <sound>sound\snd_crystal</sound>
       <sound>sound\snd_door</sound>
       <sound>sound\snd_engine</sound>
+      <sound>sound\snd_expand</sound>
       <sound>sound\snd_explode</sound>
       <sound>sound\snd_explode2</sound>
       <sound>sound\snd_firework</sound>
@@ -704,6 +705,10 @@
       <sprite>sprites\spr_discoblock</sprite>
       <sprite>sprites\spr_platformblock_g</sprite>
       <sprite>sprites\spr_platformblock_r</sprite>
+      <sprite>sprites\spr_eggblock</sprite>
+      <sprite>sprites\spr_eggblock_purple</sprite>
+      <sprite>sprites\spr_eggblock_purple_2</sprite>
+      <sprite>sprites\spr_eggblock_purple_big</sprite>
       <sprite>sprites\spr_beanstalk</sprite>
     </sprites>
     <sprites name="Masks">
@@ -768,6 +773,7 @@
       <sprite>sprites\spr_starmask_big</sprite>
       <sprite>sprites\spr_stompmask</sprite>
       <sprite>sprites\spr_yoshimask</sprite>
+      <sprite>sprites\spr_eggblock_mask</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprites name="Land">
@@ -2056,6 +2062,8 @@
       <object>objects\obj_arrowblock_reset</object>
       <object>objects\obj_platformblock_g</object>
       <object>objects\obj_platformblock_r</object>
+      <object>objects\obj_eggblock</object>
+      <object>objects\obj_eggblock_purple</object>
       <object>objects\obj_discoblock</object>
     </objects>
     <objects name="Enemies">
@@ -2731,6 +2739,7 @@
             <object>objects\obj_shard_switch</object>
           </objects>
           <object>objects\obj_guessblock</object>
+          <object>objects\obj_eggblock_purple_bump</object>
         </objects>
         <objects name="Enemies">
           <object>objects\obj_enemy_dead</object>
@@ -3058,7 +3067,7 @@
       <room>rooms\rm_levelstart</room>
       <room>rooms\rm_template</room>
       <rooms name="World 0">
-        <rooms name="World 0-1 (Gatete's Tests)">
+        <rooms name="World 0-1 (Gatete's Testing Facility)">
           <room>rooms\rm_w0_l1_a</room>
           <room>rooms\rm_w0_l1_b</room>
         </rooms>
