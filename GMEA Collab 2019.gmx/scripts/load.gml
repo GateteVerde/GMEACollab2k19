@@ -31,7 +31,7 @@ global.starcoins = real(base64_decode(file_text_read_string(file)));
 file_text_readln(file);
 
 //Coins
-global.coins = real(base64_decode(file_text_read_string(file)));
+global.totalcoins = real(base64_decode(file_text_read_string(file)));
 file_text_readln(file);
 
 //Lives

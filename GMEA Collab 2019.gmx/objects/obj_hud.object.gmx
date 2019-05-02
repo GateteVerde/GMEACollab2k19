@@ -181,14 +181,18 @@ if (hide == 0) {
         draw_sprite_part_ext(spr_hud_time_fuse, 0, 0, 0, 292/global.timemax*global.time, 5, view_xview[0]+14, view_yview[0]+203, 1, 1, c_white, 1);
         draw_sprite_ext(spr_hud_time_fusefire, anim, view_xview[0]+14+(292/global.timemax*global.time), view_yview[0]+204, 1, 1, 0, c_white, 1);
         
-        //Draw time if there's 100 seconds left
-        if (global.time &lt; 101) {
+        //Set the font
+        draw_set_font(global.numbers_g);
+    
+        //If the level has been cleared
+        if (global.clear &gt; 0)
+            draw_text_colour(view_xview[0]+16, view_yview[0]+188, global.time, c_white, c_white, c_white, c_white, 1);
+            
+        //Otherwise, show time if under 101 seconds
+        else {
         
-            //Set the font
-            draw_set_font(global.numbers_g);
-        
-            //Draw the text
-            draw_text_colour(view_xview[0]+16, view_yview[0]+188, global.time, c_red, c_red, c_red, c_red, 1);
+            if (global.time &lt; 101)
+                draw_text_colour(view_xview[0]+16, view_yview[0]+188, global.time, c_white, c_white, c_red, c_red, 1);
         }
     }
 }

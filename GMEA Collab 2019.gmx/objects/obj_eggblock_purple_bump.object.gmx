@@ -151,8 +151,9 @@ else if (ready == 2) {
         scale = 1;
 }
 
-//Perform obj_stoneblock step event
-event_perform_object(obj_stoneblock, ev_step, ev_step_normal);
+//Perform obj_stoneblock step event if not moving
+if (vspeed == 0)
+    event_perform_object(obj_stoneblock, ev_step, ev_step_normal);
 </string>
           </argument>
         </arguments>

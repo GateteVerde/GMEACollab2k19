@@ -540,18 +540,6 @@ instance_create(0,0,obj_mapwater);
 //Fade out screen
 instance_create(0,0,obj_fadeout);
 
-//Make sure the player gets health
-if (global.healthmode) {
-
-    //If health was set to 0
-    if (health == 0) {
-    
-        health = 2;
-        if (global.powerup == cs_small)
-            global.powerup = cs_big;
-    }
-}
-
 //Begin playing the world map music
 if (instance_exists(obj_mapplayer))
 &amp;&amp; (global.died == 0)
@@ -642,7 +630,7 @@ draw_text(view_xview[0]+329, view_yview[0]+27, string_format(lives, 2, 0));
 
 //Draw coins
 draw_sprite_ext(spr_mapcoin, 0, view_xview[0]+6, view_yview[0]+194, 1, 1, 0, c_white, 1);
-draw_text(view_xview[0]+24, view_yview[0]+199, string_format(global.coins, 4, 0));
+draw_text(view_xview[0]+24, view_yview[0]+199, string_format(global.totalcoins, 7, 0));
 
 //Draw the inventory if showing
 if (inv_y &gt; 0) {

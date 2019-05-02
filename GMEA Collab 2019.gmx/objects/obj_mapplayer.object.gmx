@@ -46,6 +46,9 @@ image_speed = 0;
 image_index = 0;
 alarm[2] = 1;
 
+//Tally coins
+alarm[5] = 1;
+
 //Facing direction
 xscale = 1;
 
@@ -142,6 +145,63 @@ ds_map_clear(global.redrings);
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Increment coins collected in level
+
+//If the player collected coins in a level
+if (global.coins &gt; 0) {
+
+    //Play 'Coin' sound
+    audio_play_sound(snd_coin, 0, false);
+    
+    //If coins are greater than 100
+    if (global.coins &gt; 99) {
+    
+        //Increment tally by 100
+        global.totalcoins += 100;
+        global.coins -= 100;
+    }
+    
+    //Otherwise, if coins are greater than 10
+    else if (global.coins &gt; 9) {
+    
+        //Increment tally by 10
+        global.totalcoins += 10;
+        global.coins -= 10;
+    }    
+    
+    //Otherwise
+    else {
+    
+        //Increment by one
+        global.totalcoins++;
+        global.coins--;
+    }
+    
+    //Repeat the process
+    alarm[5] = 2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="4">
       <action>
         <libid>1</libid>
@@ -199,7 +259,8 @@ if (panel) {
         if (panel.saveme == 0) {
         
             //If there's still opener objects around, wait
-            if (instance_number(obj_opener) &gt; 0) {
+            if (instance_number(obj_opener) &gt; 0) 
+            || (global.coins &gt; 0) {
             
                 alarm[3] = 1;
                 exit;
@@ -207,6 +268,9 @@ if (panel) {
             
             //Allow movement
             ready = 0;
+            
+            //Tally coins
+            alarm[5] = 1;
             
             //Play music
             obj_mapcontrol.alarm[2] = 1;
@@ -216,7 +280,8 @@ if (panel) {
         else if (panel.saveme == 1) &amp;&amp; (global.clear &gt; 0) {
         
             //If there's still opener objects around, wait
-            if (instance_number(obj_opener) &gt; 0) {
+            if (instance_number(obj_opener) &gt; 0) 
+            || (global.coins &gt; 0) {
             
                 alarm[3] = 1;
                 exit;
@@ -233,6 +298,9 @@ if (panel) {
         
         //Allow movement
         ready = 0;
+        
+        //Tally coins
+        alarm[5] = 1;
         
         //Play music
         obj_mapcontrol.alarm[2] = 1;
@@ -338,6 +406,19 @@ else {
           <argument>
             <kind>1</kind>
             <string>///Open adyacent paths
+
+//Do not open until coins were tallied
+if (global.coins &gt; 0) {
+
+    //Hold this event
+    alarm[0] = 1;
+    
+    //Do not allow movement
+    ready = 1;
+    
+    //Exit this event
+    exit;
+}
 
 //If the level has been cleared with a regular exit
 if (global.clear == 1) {

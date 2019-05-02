@@ -439,6 +439,10 @@ if (lives &gt; 99)
 if (global.coins &gt; 9999) 
     global.coins = 9999;
     
+//Make sure global coins don't go over 9999990
+if (global.totalcoins &gt; 9999990)
+    global.totalcoins = 9999990;
+    
 //Make the screen shake when the 'Thwomp' sound plays
 if (!audio_is_playing(snd_thwomp))
 &amp;&amp; (!audio_is_playing(snd_explode2))

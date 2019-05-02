@@ -45,6 +45,7 @@ global.skin = 0;
 
 //Coins
 global.coins = 0;
+global.totalcoins = 0;
 
 //Red Coins
 global.redcoins = 0;

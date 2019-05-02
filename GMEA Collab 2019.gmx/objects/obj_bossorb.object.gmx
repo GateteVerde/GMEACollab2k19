@@ -94,8 +94,8 @@ else {
         //Repeat the process
         alarm[0] = 2;
     
-        //Get 500 points
-        score += 500;
+        //Get 5 coins
+        global.coins += 5;
         
         //Decrement 5 seconds
         global.time -= 5;
@@ -108,7 +108,7 @@ else {
         alarm[0] = 2;
     
         //Get 100 points
-        score += 100;
+        global.coins += 1;
         
         //Decrement 1 second
         global.time--;
