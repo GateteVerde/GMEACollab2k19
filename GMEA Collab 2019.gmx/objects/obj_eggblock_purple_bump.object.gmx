@@ -110,7 +110,7 @@ if (ready == 0) {
         &amp;&amp; (bbox_bottom &lt; semisolid.yprevious+5) {
         
             //Snap above the semisolid
-            y = semisolid.bbox_top-16;
+            y = semisolid.bbox_top-14;
             
             //Stop vertical movement
             gravity = 0;

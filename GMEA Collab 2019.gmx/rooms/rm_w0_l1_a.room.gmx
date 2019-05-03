@@ -56,7 +56,7 @@
     <instance objName="obj_semisolid" x="0" y="384" name="inst_9E5F86E1" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_semisolid" x="560" y="384" name="inst_397ECBA1" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_semisolid" x="208" y="400" name="inst_E3778C2D" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_3B1EA353" locked="0" code="levelmusic = bgm_athletic;&#xA;leveltime = 400;&#xA;camlock = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_3B1EA353" locked="0" code="levelmusic = bgm_athletic;&#xA;leveltime = 2000;&#xA;camlock = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="376" y="384" name="inst_DD0DE48D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="416" y="272" name="inst_D1C93BE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_eblock" x="400" y="272" name="inst_CA399E8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -120,6 +120,11 @@
     <instance objName="obj_coin" x="384" y="96" name="inst_E546ECBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="352" y="96" name="inst_EA68DEDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="368" y="80" name="inst_DDA5CC04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_acecoin" x="240" y="320" name="inst_F9EA78E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_acecoin" x="496" y="320" name="inst_A58FEAA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_acecoin" x="368" y="240" name="inst_09AB29FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_acecoin" x="256" y="144" name="inst_9E525423" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_acecoin" x="480" y="144" name="inst_4BE67557" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgr_tileset" x="176" y="384" w="16" h="16" xo="16" yo="0" id="10097465" name="inst_EB802EE7" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
