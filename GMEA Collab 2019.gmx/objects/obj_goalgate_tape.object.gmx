@@ -155,12 +155,24 @@ instance_destroy();
 myscore = instance_create(x-8, y, obj_score);
 
 //3-UP
-if (y &lt; ystart-127)
+if (y &lt; ystart-127) {
+
+    //Quad your current coins
+    global.coins = floor(global.coins*4);
+
+    //Get 3-Up
     with (myscore) event_user(10);
+}
     
 //1-UP
-else if (y &lt; ystart-120)
+else if (y &lt; ystart-120) {
+
+    //Double your current coins
+    global.coins = floor(global.coins*2);
+
+    //Get 1-Up
     with (myscore) event_user(9);
+}
     
 //4000 points
 else if (y &lt; ystart-96)

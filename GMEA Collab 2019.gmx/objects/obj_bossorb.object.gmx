@@ -32,6 +32,9 @@ event_inherited();
 
 //Time variable
 ready = 0;
+
+//Coins
+coins = 0;
 </string>
           </argument>
         </arguments>
@@ -92,10 +95,15 @@ else {
     if (global.time &gt; 4) {
     
         //Repeat the process
-        alarm[0] = 2;
-    
-        //Get 5 coins
-        global.coins += 5;
+        alarm[0] = 4;
+        
+        //Increment coins
+        coins += 5;
+        if (coins &gt; 9) {
+        
+            coins -= 10;
+            global.coins++;
+        }
         
         //Decrement 5 seconds
         global.time -= 5;
@@ -105,37 +113,25 @@ else {
     else if ((global.time &lt; 5) &amp;&amp; (global.time &gt; 0)) {
     
         //Repeat the process
-        alarm[0] = 2;
-    
-        //Get 100 points
-        global.coins += 1;
+        alarm[0] = 4;
         
-        //Decrement 1 second
+        //Increment coins
+        coins ++;
+        if (coins &gt; 9) {
+        
+            coins -= 10;
+            global.coins++;
+        }
+        
+        //Decrement 5 seconds
         global.time--;
     }
-
-    //Play 'Count' sounds
-    if (ready == 0) {
     
-        //If the timer is greater than 0
-        if (global.time &gt; 0) {
-        
-            ready = 1;
-            audio_play_sound(snd_count, 0, false);
-            audio_play_sound(snd_count2, 0, true);
-        }
-        else {
-        
-            ready = 2;
-            audio_play_sound(snd_countend, 0, false);
-        }
-    }
-    else if ((global.time &lt; 1) &amp;&amp; (ready == 1)) {
-    
-        ready = 2;
-        audio_stop_sound(snd_count2);
-        audio_play_sound(snd_countend, 0, false);
-    }    
+    //Play sound depending of how much time is left
+    if (global.time != 0)
+        audio_play_sound(snd_count, 0, false);
+    else
+        audio_play_sound(snd_count2, 0, false);
 }
 </string>
           </argument>
