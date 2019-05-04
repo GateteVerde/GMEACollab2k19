@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <datafiles number="83" name="datafiles"/>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\World 6-S1 (Pot Pot Panic!)</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="Action">
       <sound>sound\snd_break</sound>
@@ -131,6 +133,7 @@
       <sound>sound\snd_tock</sound>
     </sounds>
     <sounds name="Music">
+      <sounds name="Custom"/>
       <sounds name="Events">
         <sounds name="Goals">
           <sound>sound\bgm_sm1clear</sound>
@@ -1763,6 +1766,14 @@
         <background>background\bgr_smog</background>
         <background>background\bgr_smog2</background>
       </backgrounds>
+      <backgrounds name="Custom">
+        <backgrounds name="World 6">
+          <backgrounds name="S1">
+            <background>background\bgr_w6_S1</background>
+            <background>background\bgr_w6_S1_b</background>
+          </backgrounds>
+        </backgrounds>
+      </backgrounds>
       <background>background\bgr_blocks</background>
       <background>background\bgr_blocks_bg</background>
       <background>background\bgr_bonus</background>
@@ -1791,6 +1802,13 @@
         <background>background\bgr_tileset_bushes</background>
         <background>background\bgr_tileset_bushes_large</background>
         <background>background\bgr_tileset_ghost</background>
+      </backgrounds>
+      <backgrounds name="Custom">
+        <backgrounds name="World 6">
+          <backgrounds name="S1">
+            <background>background\bgr_tileset_w6_S1</background>
+          </backgrounds>
+        </backgrounds>
       </backgrounds>
       <background>background\bgr_tileset</background>
       <background>background\bgr_tileset_2</background>
@@ -3069,13 +3087,18 @@
       <room>rooms\rm_template</room>
       <rooms name="World 0">
         <rooms name="World 0-1 (Gatete's Testing Facility)">
-          <room>rooms\rm_w0_l1_a</room>
-          <room>rooms\rm_w0_l1_b</room>
+          <room>rooms\rm_w0_01_a</room>
+          <room>rooms\rm_w0_01_b</room>
         </rooms>
       </rooms>
       <rooms name="World 1">
         <rooms name="World 1-5 (Altitude Acres)">
           <room>rooms\rm_altacrs_a</room>
+        </rooms>
+      </rooms>
+      <rooms name="World 6">
+        <rooms name="World 6-S1 (Pot Pot Panic!)">
+          <room>rooms\rm_w6_S1</room>
         </rooms>
       </rooms>
     </rooms>
