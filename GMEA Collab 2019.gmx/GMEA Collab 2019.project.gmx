@@ -133,7 +133,6 @@
       <sound>sound\snd_tock</sound>
     </sounds>
     <sounds name="Music">
-      <sounds name="Custom"/>
       <sounds name="Events">
         <sounds name="Goals">
           <sound>sound\bgm_sm1clear</sound>

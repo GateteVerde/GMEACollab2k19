@@ -370,7 +370,7 @@
     <instance objName="obj_coin" x="7344" y="160" name="inst_FE542DBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="7344" y="176" name="inst_9A893AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="7344" y="192" name="inst_653125B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_messageblock" x="32" y="176" name="inst_96525573" locked="0" code="varmsg = &quot;Get yourself prepared for some wall-jumping action, WizToad is the culprit of all this!&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_messageblock" x="32" y="176" name="inst_96525573" locked="0" code="varmsg = &quot;Get yourself prepared for some wall-jumping action. ##In order to make a wall-jump, hug the wall by pressing the opposite direction of the wall and press the 'Jump' key once you are sliding it down to jump from the wall. ##Also, WizToad has been found culprit of making this level here OwO.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgr_tileset_w6_S1" x="464" y="224" w="16" h="16" xo="52" yo="69" id="10096786" name="inst_AF0FAEA2" depth="99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
