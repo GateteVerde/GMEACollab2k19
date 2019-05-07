@@ -142,7 +142,7 @@
     <instance objName="obj_mappath_v" x="432" y="304" name="inst_9A314805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mapstart" x="176" y="320" name="inst_8ABD790A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="208" y="320" name="inst_59652CCF" locked="0" code="levelname = &quot;Gatete's Testing Facility&quot;;&#xA;levelnumb = &quot;-1&quot;;&#xA;levelauth = &quot;Gatete&quot;;&#xA;levelid = -1;&#xA;myroom = rm_w0_01_a;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_maplevel" x="272" y="320" name="inst_8475E93D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_maplevel" x="272" y="320" name="inst_8475E93D" locked="0" code="levelname = &quot;Snifit Factory&quot;;&#xA;levelnumb = &quot;-6&quot;;&#xA;levelauth = &quot;Onox&quot;;&#xA;levelid = 7;&#xA;myroom = rm_w1_06_a;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="304" y="320" name="inst_7F329382" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="336" y="320" name="inst_57D4D4BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="368" y="320" name="inst_FCDD97A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -156,7 +156,7 @@
     <instance objName="obj_maplevel" x="272" y="224" name="inst_444E9AAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="240" y="224" name="inst_844D30F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="208" y="256" name="inst_237F2ED5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_maplevel" x="208" y="288" name="inst_0FA8DB78" locked="0" code="levelname = &quot;Pot Pot Panic!&quot;;&#xA;levelnumb = &quot;-S1&quot;;&#xA;levelauth = &quot;WizToad&quot;;&#xA;levelid = 59;&#xA;myroom = rm_w6_S1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_maplevel" x="208" y="288" name="inst_0FA8DB78" locked="0" code="levelname = &quot;Pot Pot Panic!&quot;;&#xA;levelnumb = &quot;-S1&quot;;&#xA;levelauth = &quot;WizToad&quot;;&#xA;levelid = 59;&#xA;myroom = rm_w6_S1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="240" y="288" name="inst_2917D9A4" locked="0" code="levelname = &quot;Altitude Acres&quot;;&#xA;levelnumb = &quot;-5&quot;;&#xA;levelauth = &quot;Yoshubs&quot;;&#xA;levelid = 6;&#xA;myroom = rm_altacrs_a;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="272" y="288" name="inst_042EEA82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel" x="272" y="256" name="inst_C4FC92D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -191,7 +191,6 @@
     <instance objName="obj_modifier" x="272" y="288" name="inst_62B1B6ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_modifier" x="272" y="304" name="inst_EF35CA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_modifier" x="256" y="320" name="inst_9A81F39C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_modifier" x="272" y="320" name="inst_829F3980" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_modifier" x="288" y="224" name="inst_1000E63A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_modifier" x="304" y="224" name="inst_ADEBFDB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_modifier" x="304" y="240" name="inst_394E7724" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -264,6 +263,7 @@
     <instance objName="obj_modifier" x="240" y="320" name="inst_9D8F841C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel_pipe2" x="240" y="320" name="inst_8DBF14F7" locked="0" code="levelname = &quot;TO ORANGE PIPE B&quot;&#xA;pipex = 400;&#xA;pipey = 224;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maplevel_pipe2" x="400" y="224" name="inst_EB2B7E1C" locked="0" code="levelname = &quot;TO ORANGE PIPE A&quot;&#xA;pipex = 240;&#xA;pipey = 320;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_modifier" x="272" y="320" name="inst_F027C0AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgr_tileset_map" x="448" y="400" w="16" h="16" xo="512" yo="448" id="10096862" name="inst_E03BDB85" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

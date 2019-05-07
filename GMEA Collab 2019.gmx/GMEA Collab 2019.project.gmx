@@ -6,6 +6,7 @@
   <datafiles number="83" name="datafiles"/>
   <NewExtensions>
     <extension index="0">extensions\World 6-S1 (Pot Pot Panic!)</extension>
+    <extension index="1">extensions\W1_S6_Snifit-Factory</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Action">
@@ -165,6 +166,7 @@
       <sound>sound\bgm_subcon</sound>
       <sound>sound\bgm_underground</sound>
       <sound>sound\bgm_underwater</sound>
+      <sound>sound\bgm_factory</sound>
     </sounds>
     <sound>sound\snd_yoshi</sound>
     <sound>sound\snd_yoshi_eat</sound>
@@ -1766,6 +1768,9 @@
         <background>background\bgr_smog2</background>
       </backgrounds>
       <backgrounds name="Custom">
+        <backgrounds name="World 1">
+          <background>background\bgr_w1_06</background>
+        </backgrounds>
         <backgrounds name="World 6">
           <backgrounds name="S1">
             <background>background\bgr_w6_S1</background>
@@ -1803,6 +1808,11 @@
         <background>background\bgr_tileset_ghost</background>
       </backgrounds>
       <backgrounds name="Custom">
+        <backgrounds name="World 1">
+          <backgrounds name="06">
+            <background>background\bgr_tileset_w1_06</background>
+          </backgrounds>
+        </backgrounds>
         <backgrounds name="World 6">
           <backgrounds name="S1">
             <background>background\bgr_tileset_w6_S1</background>
@@ -1813,10 +1823,10 @@
       <background>background\bgr_tileset_2</background>
       <background>background\bgr_tileset_3</background>
       <background>background\bgr_tileset_4</background>
+      <background>background\bgr_tileset_5</background>
       <background>background\bgr_tileset_goal</background>
       <background>background\bgr_tileset_goal_smb3</background>
       <background>background\bgr_tileset_map</background>
-      <background>background\bgr_tileset_5</background>
     </backgrounds>
     <background>background\bgr_anniversary</background>
     <background>background\bgr_title</background>
@@ -3093,6 +3103,10 @@
       <rooms name="World 1">
         <rooms name="World 1-5 (Altitude Acres)">
           <room>rooms\rm_altacrs_a</room>
+        </rooms>
+        <rooms name="World 1-6 (Snifit Factory)">
+          <room>rooms\rm_w1_06_a</room>
+          <room>rooms\rm_w1_06_b</room>
         </rooms>
       </rooms>
       <rooms name="World 6">

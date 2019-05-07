@@ -283,7 +283,7 @@ if (checkpoint == noone) {
 }
 
 //Otherwise, if a checkpoint was reached go to the checkpoint room
-else {
+else if (checkpoint != noone) {
 
     //Remember it
     global.checkpoint = checkpoint;
@@ -294,7 +294,7 @@ else {
 }
 
 //Set destination room
-global.dest = myroom;
+global.dest = obj_mapplayer.myroom;
 </string>
           </argument>
         </arguments>
