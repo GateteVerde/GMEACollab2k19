@@ -31,10 +31,13 @@
 **  This item uses creation code!
 **
 **  maxspd    = Maximum autoscroll speed.
+**  dir       = Don't worry about this unless you're using custom scrolling.
+**              Changes the direction of the object.
 */
 
 //Default variables
 maxspd = 0.5;
+dir = 0;
 </string>
           </argument>
         </arguments>
@@ -60,6 +63,7 @@ maxspd = 0.5;
             <string>///Change the speed of the autoscroll object
 
 other.maxspd = maxspd;
+other.dir = dir;
 </string>
           </argument>
         </arguments>

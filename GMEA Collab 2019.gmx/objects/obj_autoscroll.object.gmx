@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_marker_event2</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -33,12 +33,19 @@
 **  mypath    = Path that the autoscroll object will use. Build it on the paths folder.
 **  maxspd    = Maximum autoscroll speed.
 **  airship   = To make the object wave up/down like if you were on a airship level.
+**
+**  custompth = Don't worry about this unless you're using custom scrolling
+**              Allows autoscroll systems with directions.
 */
 
 //Default variables
 mypath = noone;
 maxspd = 0.5;
 airship = 0;
+
+custompth = false;
+dir = 0; //Again, don't worry about this.
+speed_ = 0.01; //Don't worry about this either.
 
 //Make the player able to die.
 alarm[0] = 90;
@@ -84,13 +91,17 @@ airshipoffset = 0;
             <kind>1</kind>
             <string>///Start moving
 
-//If a path does exist
-if (mypath != noone)
-    path_start(mypath,0.01,path_action_stop,false);
+if custompth = false {
+    //If a path does exist
+    if (mypath != noone)
+        path_start(mypath,0.01,path_action_stop,false);
 
-//Otherwise, move normally
-else if (mode == 0)
-    hspeed = 0.01;
+    //Otherwise, move normally
+    else if (mode == 0)
+        hspeed = 0.01;
+} else {
+    motion_set(dir, speed_);
+}
 </string>
           </argument>
         </arguments>
@@ -172,24 +183,32 @@ candie = true;
             <kind>1</kind>
             <string>///Autoscroll logic
 
-//Update speed
-if (mypath != noone) {
-
-    path_speed += 0.01;
-    if (path_speed &gt; maxspd)
-        path_speed -= 0.01;
-}
-else {
-
-    //If the area does not have a boss
-    if (mode == 0) {
+if custompth = false { //If you aren't using the Yoshubs' paths (without actual 'paths')
+    //Update speed
+    if (mypath != noone) {
     
-        hspeed += 0.01;
-        if (hspeed &gt; maxspd)
-            hspeed = maxspd;
+        path_speed += 0.01;
+        if (path_speed &gt; maxspd)
+            path_speed -= 0.01;
     }
-}
+    else {
 
+        //If the area does not have a boss
+        if (mode == 0) {
+    
+            hspeed += 0.01;
+            if (hspeed &gt; maxspd)
+                hspeed = maxspd;
+        }
+    }
+} 
+else {
+    speed_ += 0.01
+    if (speed_ &gt; maxspd)
+        speed_ -= 0.01;
+
+    motion_set(dir,speed_);
+}
 //Airship floating effect.
 if (airship) {
 

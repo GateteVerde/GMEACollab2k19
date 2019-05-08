@@ -3099,6 +3099,9 @@
           <room>rooms\rm_w0_01_a</room>
           <room>rooms\rm_w0_01_b</room>
         </rooms>
+        <rooms name="World 0-2 (Yoshubs' Autoscroll Test)">
+          <room>rooms\rm_w0_02</room>
+        </rooms>
       </rooms>
       <rooms name="World 1">
         <rooms name="World 1-5 (Altitude Acres)">
